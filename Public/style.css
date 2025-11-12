@@ -1,0 +1,954 @@
+/* Basic Setup */
+:root {
+    --primary-color: #e20b39; /* A strong, tech-blue */
+    --secondary-color: #e40b0b;
+    --dark-color: #222;
+    --light-color: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    overflow-x: hidden;
+}
+
+/* Hero Section Layout */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh; /* Full screen height */
+    overflow: hidden;
+}
+
+/* The animation canvas */
+#hero-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind the text */
+}
+
+/* Hero Text Content */
+.hero-content {
+    position: relative;
+    z-index: 2; /* In front of the animation */
+    padding: 20px;
+    max-width: 800px;
+    
+    /* Animation: Fade in text */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero-headline {
+    font-size: 3.5rem; /* Large, bold headline */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #e20b39;
+
+}
+
+.hero-subheadline {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+}
+
+.cta-primary, .cta-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cta-primary {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.cta-primary:hover {
+    background-color: #a00000; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 0, 0, 0.808);
+}
+
+.cta-secondary {
+    background-color: transparent;
+    color: var(--light-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.cta-secondary:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive (for mobile) */
+@media (max-width: 768px) {
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+    .hero-subheadline {
+        font-size: 1.1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+
+/* ==================
+   SERVICES SECTION STYLING
+   ================== */
+
+.services-overview {
+    padding: 80px 20px;
+    background-color: #1a1a1a; /* A slightly lighter dark shade */
+    overflow: hidden; /* Important for animations */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--light-color);
+    
+    /* Animation: Will be invisible at first */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.services-grid {
+    display: grid;
+    /* 4 columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--dark-color);
+    padding: 35px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* --- ADD THESE 3 LINES --- */
+    height: 100%; /* Makes the card fill its parent grid cell */
+    display: flex; /* Turns the card into a flexbox container */
+    flex-direction: column; /* Stacks the content vertically */
+    padding-bottom: 10px;
+    /* Animation: Will be invisible at first */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* Placeholder icon styling */
+.service-card .card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* In a real project, you'd use an <img> or <svg> tag here */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Give the icon some breathing room */
+    box-sizing: border-box; /* Ensures padding doesn't break the size */
+}
+
+.service-card .card-icon img {
+    width: 100%;
+    height: 100%;
+    /* If your icons are black, this CSS will turn them white */
+    filter: brightness(0) invert(1);
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--light-color);
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==================
+   RESPONSIVE (SERVICES)
+   ================== */
+
+/* For Tablets (2x2 grid) */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-heading {
+        font-size: 2.5rem;
+    }
+}
+
+/* For Mobile (1 column) */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-heading {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ==================
+   SINGLE PROJECT PORTFOLIO FIX
+   ================== */
+
+/* This styles our new '.single-project' class */
+.portfolio-grid.single-project {
+    grid-template-columns: 1fr; /* Forces the grid to be 1 column */
+    max-width: 500px;           /* Stops the single card from being huge */
+    margin: 0 auto;             /* Centers the grid container itself */
+}
+
+/* ==================
+   PORTFOLIO SECTION STYLING
+   ================== */
+
+.portfolio {
+    padding: 80px 20px;
+    background-color: var(--dark-color); /* Back to the darkest background */
+}
+
+.portfolio-grid {
+    display: grid;
+    /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #1a1a1a; /* Lighter dark for the card */
+    border-radius: 12px;
+    border: 1px solid #333;
+    overflow: hidden; /* This is key for the image zoom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Animation: Will be invisible at first */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image zoom effect on hover */
+.project-image-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 250px; /* Fixed height for consistency */
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area */
+    transition: transform 0.4s ease-out;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* The zoom-in effect */
+}
+
+.project-content {
+    padding: 30px;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: rgba(0, 123, 255, 0.1); /* Transparent blue */
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+
+.project-content h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--light-color);
+}
+
+.project-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: letter-spacing 0.3s ease;
+}
+
+.project-link::after {
+    content: ' \2192'; /* Right arrow */
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.project-link:hover {
+    letter-spacing: 0.5px;
+}
+
+.project-link:hover::after {
+    transform: translateX(4px); /* Arrow moves on hover */
+}
+
+
+/* ==================
+   RESPONSIVE (PORTFOLIO)
+   ================== */
+
+/* For Tablets (2 columns) */
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For Mobile (1 column) */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-image-wrapper {
+        height: 200px; /* Smaller image height on mobile */
+    }
+}
+
+
+/* ==================
+   CONTACT SECTION STYLING
+   ================== */
+
+.contact {
+    padding: 80px 20px;
+    background-color: #1a1a1a; /* Lighter dark shade */
+    overflow: hidden;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Contact Text (Left) */
+.contact-text {
+    /* Animation: Will be invisible */
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.contact-text .section-heading {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--light-color);
+}
+.contact-details p strong {
+    color: var(--primary-color);
+}
+
+
+/* Contact Form (Right) */
+.contact-form {
+    /* Animation: Will be invisible */
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--dark-color);
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: var(--light-color);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.form-group select option {
+    background-color: var(--dark-color);
+}
+
+.contact-form .cta-primary {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+.contact-form .cta-primary:hover {
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+}
+
+
+/* ==================
+   FOOTER STYLING
+   ================== */
+
+footer {
+    padding: 30px 20px;
+    background-color: var(--dark-color);
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+
+/* ==================
+   RESPONSIVE (CONTACT)
+   ================== */
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==================
+   NAVBAR STYLING
+   ================== */
+.main-nav {
+    background-color: var(--dark-color);
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-color);
+    text-decoration: none;
+
+    display: flex;         /* Turns the link into a flex container */
+    align-items: center;   /* This is the magic: vertically centers items */
+    gap: 12px;
+}
+
+.nav-logo img {
+    height: 40px; /* Set your logo height here. 40px is a good start. */
+    width: auto; /* Let the width adjust automatically */
+    filter: hue-rotate(146deg) saturate(3) brightness(1.2);
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-cta {
+    background-color: var(--primary-color);
+    color: var(--light-color) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-cta:hover {
+    background-color: #0056b3;
+}
+
+
+/* ==================
+   PAGE HERO STYLING
+   ================== */
+.page-hero {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ==================
+   SERVICE DETAIL STYLING
+   ================== */
+.service-detail {
+    padding: 80px 20px;
+    overflow: hidden; /* For animations */
+}
+
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.service-detail-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-detail-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-detail-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.service-detail-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.features-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.features-list li {
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+}
+
+/* Custom checkmark icon */
+.features-list li::before {
+    content: '\2713'; /* Checkmark */
+    color: var(--primary-color);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.service-detail-text .cta-primary {
+    font-size: 1.1rem;
+}
+
+/* Animation defaults (invisible) */
+.service-detail-image {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.service-detail-text {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+
+/* ==================
+   SERVICE DETAIL REVERSED LAYOUT
+   ================== */
+
+.service-detail.layout-reversed {
+    background-color: #1a1a1a; /* Alternating background color */
+}
+
+.service-detail.layout-reversed .service-detail-grid {
+    /* This uses CSS Grid to flip the visual order */
+    grid-template-areas: "text image";
+}
+
+/* On desktop, we just use the default grid order */
+.service-detail .service-detail-grid {
+    grid-template-areas: "image text";
+}
+
+.service-detail-image {
+    grid-area: image;
+}
+.service-detail-text {
+    grid-area: text;
+}
+
+/* Default animation states (for layout-reversed) */
+.service-detail.layout-reversed .service-detail-image {
+    opacity: 0;
+    transform: translateX(50px); /* Comes from the right */
+}
+.service-detail.layout-reversed .service-detail-text {
+    opacity: 0;
+    transform: translateX(-50px); /* Comes from the left */
+}
+
+/* On mobile, stack them all normally */
+@media (max-width: 900px) {
+    .service-detail-grid,
+    .service-detail.layout-reversed .service-detail-grid {
+        grid-template-areas:
+            "text"
+            "image";
+        grid-template-columns: 1fr;
+    }
+
+    /* Reset animation defaults for mobile */
+    .service-detail-image,
+    .service-detail.layout-reversed .service-detail-image,
+    .service-detail-text,
+    .service-detail.layout-reversed .service-detail-text {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+/* ==================
+   CORE VALUES STYLING
+   ================== */
+.values-section {
+    padding: 80px 20px;
+    background-color: #1a1a1a; /* Lighter dark */
+}
+
+.values-section .section-heading {
+    /* This re-uses the .section-heading style from the homepage */
+    /* We just need to reset the animation defaults */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.value-card {
+    background-color: var(--dark-color);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    
+    /* Animation defaults */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.value-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==================
+   CASE STUDY PAGE STYLING
+   ================== */
+
+.case-study-hero {
+    /* This sets your image as the background and adds a dark overlay */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Paytha.jpg');
+
+    /* These properties make the image look good */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* This gives the section height and centers the text */
+    min-height: 450px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    /* This adds some padding (it was 60px 0 0 0 before) */
+    padding: 60px 20px;
+}
+
+.case-study-hero .project-tag {
+    display: inline-block;
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-study-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-study-hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+
+/* Overview Section */
+.overview-section {
+    background-color: #1a1a1a;
+    padding: 60px 20px;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.overview-box {
+    background-color: var(--dark-color);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.overview-box h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.overview-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Story Section */
+.story-section {
+    padding: 80px 20px;
+    background-color: var(--dark-color);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.story-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Final CTA Section */
+.final-cta {
+    background-color: var(--primary-color);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--light-color);
+}
+
+.final-cta p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+.final-cta .cta-primary {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+.final-cta .cta-primary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive for Case Study */
+@media (max-width: 900px) {
+    .overview-grid, .story-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .case-study-hero h1 { font-size: 2.5rem; }
+    .final-cta h2 { font-size: 2.2rem; }
+}
+
+/* ==================
+   LINK STYLING FIX
+   ================== */
+
+.service-card-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;      /* Makes the text use the parent's color */
+}

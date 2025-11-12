@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RatnaSeema Technologies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            
+                <img src="images/Logo.png" alt="RatnaSeema Technologies Logo">
+                <span>RatnaSeema Technologies</span>
+
+            
+    
+</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio-paytha.html">Portfolio</a></li> <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+    <header class="hero">
+        <canvas id="hero-animation"></canvas>
+
+        <div class="hero-content">
+            <h1 class="hero-headline">We Build the Solution. Not Just the Software.</h1>
+            <p class="hero-subheadline">
+                We partner with growing businesses to solve their unique 
+                challenges with custom web and mobile applications 
+                that deliver real results.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-primary">Get a Free Consultation</a>
+                <a href="#process" class="cta-secondary">Learn Our Process</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="services-overview" id="process"> <div class="container">
+        <h2 class="section-heading">Our Core Services</h2>
+        
+        <div class="services-grid">
+            
+           <a href="services.html#desktop" class="service-card-link">
+        <div class="service-card">
+            <div class="card-icon">
+                <img src="images/icon-desktop.svg" alt="Desktop Application Icon">
+            </div>
+            <h3>Custom Desktop Applications</h3>
+            <p>We build powerful, high-performance, and secure desktop applications for Windows, macOS, and Linux that integrate seamlessly with your existing systems.</p>
+        </div>
+    </a>
+    
+    <a href="services.html#web" class="service-card-link">
+        <div class="service-card">
+            <div class="card-icon">
+                <img src="images/icon-web.svg" alt="Website Dev & Hosting Icon">
+            </div>
+            <h3>Website Dev & Hosting</h3>
+            <p>From stunning landing pages to complex e-commerce platforms, we design, develop, and host your website, providing a complete, hassle-free online solution.</p>
+        </div>
+    </a>
+    
+    <a href="services.html#mobile" class="service-card-link">
+        <div class="service-card">
+            <div class="card-icon">
+                <img src="images/icon-mobile.svg" alt="Mobile Application Icon">
+            </div>
+            <h3>Mobile Applications</h3>
+            <p>We create beautiful and intuitive native or cross-platform mobile apps for both iOS and Android, putting your business directly into your customers' hands.</p>
+        </div>
+    </a>
+    
+    <a href="services.html#cloud" class="service-card-link">
+        <div class="service-card">
+            <div class="card-icon">
+                <img src="images/icon-cloud.svg" alt="Cloud Icon">
+            </div>
+            <h3>Cloud Solutions</h3>
+            <p>Leverage the power of the cloud. We design and manage scalable, reliable, and cost-efficient cloud infrastructures on AWS, Azure, and Google Cloud.</p>
+        </div>
+    </a>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="portfolio" id="work">
+    <div class="container">
+        <h2 class="section-heading">Featured Case Study</h2>
+        
+        <div class="portfolio-grid single-project"> 
+            
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    <img src="images/Desktop App.jpg" alt="Paytha Dashboard Project">
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">Custom Desktop Application</span>
+                    <h3>Paytha Dashboard</h3>
+                    <p>We replaced their slow, manual spreadsheet system with a high-speed desktop app that saved the client 20+ hours of work per week.</p>
+                    
+                    <a href="portfolio-paytha.html" class="project-link">View Case Study</a>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</section>
+
+<section class="contact" id="contact"> <div class="container">
+        <div class="contact-grid">
+            
+            <div class="contact-text">
+                <h2 class="section-heading">Let's Build Something Great Together</h2>
+                <p>
+                    Have a project in mind or just want to discuss the possibilities? 
+                    We're here to help. Fill out the form, or send us an email.
+                </p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> ratnaseema44@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 89833 31894</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="main-contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service of Interest</label>
+                        <select id="service" name="service">
+                            <option value="general">Select a service</option>
+                            <option value="desktop_app">Custom Desktop Application</option>
+                            <option value="web_dev">Website Dev & Hosting</option>
+                            <option value="mobile_app">Mobile Application</option>
+                            <option value="cloud">Cloud Solution</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-primary">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 RatnaSeema Technologies. All Rights Reserved.</p>
+        </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
