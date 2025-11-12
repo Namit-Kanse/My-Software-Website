@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             // Send the data to your new server
-            fetch('https://my-website-backend.onrender.com/send', {
+            fetch('https://my-software-website-backend.onrender.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
