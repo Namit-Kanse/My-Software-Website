@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // This element's default is translateX(-50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out"
         });
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // This element's default is translateX(50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out",
             delay: 0.2

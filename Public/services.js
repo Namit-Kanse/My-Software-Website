@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(-50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out"
         });
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out",
             delay: 0.2
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out"
         });
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(-50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out",
             delay: 0.2
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(-50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out"
         });
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out",
             delay: 0.2
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out"
         });
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none none"
             },
             opacity: 1,
-            x: 0, // Animate from translateX(-50px)
+            y: 0, // <-- CHANGED from x: 0
             duration: 0.8,
             ease: "power3.out",
             delay: 0.2
