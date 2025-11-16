@@ -141,7 +141,7 @@ body, html {
     color: var(--light-color);
     
     /* Animation: Will be invisible at first */
-    opacity: 0;
+    opacity: 100;
     transform: translateY(30px);
 }
 
@@ -400,20 +400,21 @@ body, html {
 }
 
 .contact-text .section-heading {
-    text-align: left;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .contact-text p {
     font-size: 1.1rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
 }
 
 .contact-details p {
     font-size: 1.1rem;
-    margin-bottom: 10px;
+    margin-top: 40px;
     color: var(--light-color);
 }
 .contact-details p strong {
@@ -452,6 +453,7 @@ body, html {
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
